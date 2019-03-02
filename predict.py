@@ -33,7 +33,7 @@ config.gpu_options.allow_growth = True
 sess=tf.Session(config=config)
 
 net_input = tf.placeholder(tf.float32,shape=[None,None,None,3])
-net_output = tf.placeholder(tf.float32,shape=[None,None,None,num_classes]) 
+net_output = tf.placeholder(tf.float32,shape=[None,None,None,num_classes])
 
 network, _ = model_builder.build_model(args.model, net_input=net_input,
                                         num_classes=num_classes,

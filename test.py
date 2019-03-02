@@ -32,7 +32,7 @@ config.gpu_options.allow_growth = True
 sess=tf.Session(config=config)
 
 net_input = tf.placeholder(tf.float32,shape=[None,None,None,3])
-net_output = tf.placeholder(tf.float32,shape=[None,None,None,num_classes]) 
+net_output = tf.placeholder(tf.float32,shape=[None,None,None,num_classes])
 
 network, _ = model_builder.build_model(args.model, net_input=net_input, num_classes=num_classes, crop_width=args.crop_width, crop_height=args.crop_height, is_training=False)
 
@@ -92,7 +92,7 @@ for ind in range(len(test_input_names)):
     recall_list.append(rec)
     f1_list.append(f1)
     iou_list.append(iou)
-    
+
     gt = helpers.colour_code_segmentation(gt, label_values)
 
     cv2.imwrite("%s/%s_pred.png"%("Test", file_name),cv2.cvtColor(np.uint8(out_vis_image), cv2.COLOR_RGB2BGR))
